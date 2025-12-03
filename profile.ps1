@@ -26,7 +26,7 @@ function cdl { Set-Location $args; Get-ChildItem }
 function gs { git status $args }
 function gd { git diff $args }
 function glog { git log --oneline --graph --decorate -20 $args }
-function gp { git push $args }
+function gph { git push $args }
 function gpu { git pull $args }
 function gco { git checkout $args }
 function gcb { git checkout -b $args }
@@ -63,7 +63,7 @@ function ghrc {
 }
 
 # Copilot shortcuts
-function copilot {gh copilot $args}
+# function copilot {gh copilot $args} #Deprecated for https://github.com/github/copilot-cli
 
 # Utility functions
 function touch {
