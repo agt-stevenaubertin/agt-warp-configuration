@@ -30,7 +30,7 @@ function gp { git push $args }
 function gpu { git pull $args }
 function gco { git checkout $args }
 function gcb { git checkout -b $args }
-function gaa { git add . }
+function gaa { git add .; git status }
 function gcom { 
     param([string]$message)
     git commit -m $message 
@@ -61,6 +61,9 @@ function ghrc {
     param([string]$name)
     gh repo create $name --private --clone
 }
+
+# Copilot shortcuts
+function copilot {gh copilot $args}
 
 # Utility functions
 function touch {
