@@ -1,5 +1,24 @@
 # Warp Configuration Changelog
 
+## 2025-12-03 - Git Shortcut Updates
+
+### Changed
+- ✓ Renamed `gl` → `glog` to avoid conflicts with common `gl` alias
+- ✓ Renamed `gcm` → `gcom` (git commit message) to avoid PowerShell conflict
+- ✓ Updated all documentation (README.md, QUICK_REFERENCE.md, test-profile.ps1)
+
+### Git Shortcuts Summary
+- `gs` - git status
+- `gd` - git diff
+- `glog` - git log --oneline --graph (renamed from `gl`)
+- `gp` - git push
+- `gpu` - git pull
+- `gco` - git checkout
+- `gcb` - git checkout -b
+- `gaa` - git add .
+- `gcom` - git commit -m (renamed from `gcm`)
+- `cm` - checkout main + fetch + pull + status
+
 ## 2025-12-03 - Profile Merge
 
 ### ✅ Merged from Existing PowerShell Profile

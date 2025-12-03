@@ -17,13 +17,14 @@
 |---------|--------------|-------------|
 | `gs` | git status | Show status |
 | `gd` | git diff | Show changes |
-| `gl` | git log --oneline --graph -20 | Pretty log |
+| `glog` | git log --oneline --graph -20 | Pretty log |
 | `gp` | git push | Push changes |
 | `gpu` | git pull | Pull changes |
 | `gco <branch>` | git checkout | Switch branch |
 | `gcb <name>` | git checkout -b | New branch |
 | `gaa` | git add . | Stage all |
-| `gcm "msg"` | git commit -m | Commit with message |
+| `gcom "msg"` | git commit -m | Commit with message |
+| `cm` | checkout main + fetch + pull + status | Update main branch |
 
 ## 🐙 GitHub CLI
 | Command | Description |

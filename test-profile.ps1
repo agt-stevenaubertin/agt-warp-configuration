@@ -33,7 +33,7 @@ if ($allExist) {
 
 # Test 3: Check git shortcuts
 Write-Host "3. Checking git shortcuts..." -NoNewline
-$gitFunctions = @('gs', 'gd', 'gl', 'gp', 'gpu', 'gco', 'gcb', 'gaa', 'gcm')
+$gitFunctions = @('gs', 'gd', 'glog', 'gp', 'gpu', 'gco', 'gcb', 'gaa', 'gcom', 'cm')
 $allExist = $true
 foreach ($func in $gitFunctions) {
     if (-not (Get-Command $func -ErrorAction SilentlyContinue)) {
@@ -151,7 +151,7 @@ Write-Host "=== Test Complete ===" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Available shortcuts:" -ForegroundColor Yellow
 Write-Host "  Navigation: agt, repo, framework, beammaster, postprocess, weldingdatabase, tools, cdl"
-Write-Host "  Git: gs, gd, gl, gp, gpu, gco, gcb, gaa, gcm"
+Write-Host "  Git: gs, gd, glog, gp, gpu, gco, gcb, gaa, gcom, cm"
 Write-Host "  GitHub: ghpc, ghpl, ghpv, ghrc"
 Write-Host "  .NET: db, dt, dr, dc, dbnr"
 Write-Host "  Utils: touch, mkcd, which, ff, grep"

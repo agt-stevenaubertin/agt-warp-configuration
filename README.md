@@ -83,13 +83,14 @@ The `profile.ps1` file provides custom functions and aliases:
 **Git shortcuts:**
 - `gs` - git status
 - `gd` - git diff
-- `gl` - git log (pretty format)
+- `glog` - git log (pretty format)
 - `gp` - git push
 - `gpu` - git pull
 - `gco` - git checkout
 - `gcb` - git checkout -b (new branch)
 - `gaa` - git add .
-- `gcm "message"` - git commit -m
+- `gcom "message"` - git commit -m
+- `cm` - checkout main, fetch, pull, status
 
 **GitHub CLI shortcuts:**
 - `ghpc` - Create pull request

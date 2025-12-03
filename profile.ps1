@@ -19,18 +19,19 @@ function beammaster { Set-Location "C:\Git\AGTRobotics\AGT\Beammaster" }
 function postprocess { Set-Location "C:\Git\AGTRobotics\AGT\PostProcess" }
 function weldingdatabase { Set-Location "C:\Git\AGTRobotics\AGT\WeldingDatabaseInterface" }
 function tools { Set-Location "C:\Git\AGTRobotics\AGT\Tools" }
+
 function cdl { Set-Location $args; Get-ChildItem }
 
 # Git shortcuts
 function gs { git status $args }
 function gd { git diff $args }
-function gl { git log --oneline --graph --decorate -20 $args }
+function glog { git log --oneline --graph --decorate -20 $args }
 function gp { git push $args }
 function gpu { git pull $args }
 function gco { git checkout $args }
 function gcb { git checkout -b $args }
 function gaa { git add . }
-function gcm { 
+function gcom { 
     param([string]$message)
     git commit -m $message 
 }
