@@ -1,0 +1,65 @@
+# Development Workflows
+# Common development tasks and build operations
+
+workflows:
+  # .NET/C# workflows (for AGT projects)
+  - name: "Build Solution"
+    command: "dotnet build"
+    description: "Build the current .NET solution"
+    tags: ["dotnet", "build"]
+
+  - name: "Build Release"
+    command: "dotnet build --configuration Release"
+    description: "Build in Release mode"
+    tags: ["dotnet", "build", "release"]
+
+  - name: "Run Tests"
+    command: "dotnet test"
+    description: "Run all unit tests"
+    tags: ["dotnet", "test"]
+
+  - name: "Clean and Rebuild"
+    steps:
+      - dotnet clean
+      - dotnet restore
+      - dotnet build
+    description: "Clean build artifacts and rebuild"
+    tags: ["dotnet", "build", "clean"]
+
+  # Project navigation
+  - name: "Go to AGT Framework"
+    command: "cd C:\\Git\\AGTRobotics\\AGT\\Framework"
+    description: "Navigate to Framework project"
+    tags: ["navigation", "agt"]
+
+  - name: "Go to AGT Beammaster"
+    command: "cd C:\\Git\\AGTRobotics\\AGT\\Beammaster"
+    description: "Navigate to Beammaster project"
+    tags: ["navigation", "agt"]
+
+  - name: "Go to AGT PostProcess"
+    command: "cd C:\\Git\\AGTRobotics\\AGT\\PostProcess"
+    description: "Navigate to PostProcess project"
+    tags: ["navigation", "agt"]
+
+  # File operations
+  - name: "Find Files by Name"
+    command: "Get-ChildItem -Recurse -Filter {{pattern}} | Select-Object FullName"
+    description: "Search for files matching a pattern"
+    tags: ["file", "search"]
+
+  - name: "Find in Files"
+    command: "Select-String -Path . -Pattern {{search_term}} -Recurse"
+    description: "Search for text within files"
+    tags: ["file", "search", "grep"]
+
+  # System utilities
+  - name: "List Running Processes"
+    command: "Get-Process | Sort-Object CPU -Descending | Select-Object -First 10"
+    description: "Show top 10 CPU-consuming processes"
+    tags: ["system", "process"]
+
+  - name: "Check Disk Space"
+    command: "Get-PSDrive -PSProvider FileSystem | Select-Object Name, Used, Free, @{Name='TotalGB';Expression={[math]::Round($_.Used/1GB + $_.Free/1GB, 2)}}"
+    description: "Show disk space for all drives"
+    tags: ["system", "disk"]

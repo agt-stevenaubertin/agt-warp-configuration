@@ -1,0 +1,114 @@
+# Launch Configurations
+# Startup commands and environment setup for different contexts
+
+# Default shell initialization
+default:
+  # Run on every new terminal session
+  on_start:
+    # Display welcome message
+    - type: command
+      run: Write-Host "Welcome to Warp, Steven!" -ForegroundColor Cyan
+    
+    # Show current git branch if in a repository
+    - type: command
+      run: |
+        if (Test-Path .git) {
+          $branch = git branch --show-current 2>$null
+          if ($branch) {
+            Write-Host "📍 Current branch: $branch" -ForegroundColor Green
+          }
+        }
+    
+    # Optional: Load custom PowerShell profile additions
+    - type: command
+      run: |
+        if (Test-Path "$env:USERPROFILE\.warp\profile.ps1") {
+          . "$env:USERPROFILE\.warp\profile.ps1"
+        }
+
+# Project-specific launch configurations
+projects:
+  # AGT Development Environment
+  agt:
+    name: "AGT Development"
+    working_directory: "C:\\Git\\AGTRobotics\\AGT"
+    on_start:
+      - type: message
+        text: "🤖 AGT Robotics Development Environment"
+      
+      - type: command
+        run: |
+          Write-Host "`nAvailable Projects:" -ForegroundColor Yellow
+          Write-Host "  - Framework"
+          Write-Host "  - Beammaster"
+          Write-Host "  - PostProcess"
+          Write-Host "  - Plugins.VisualComponents"
+          Write-Host "  - WeldingDatabaseInterface"
+    
+    environment:
+      # Add any AGT-specific environment variables here
+      AGT_ROOT: "C:\\Git\\AGTRobotics\\AGT"
+
+  # Personal projects
+  personal:
+    name: "Personal Projects"
+    working_directory: "C:\\Users\\steven.aubertin\\repo"
+    on_start:
+      - type: message
+        text: "💻 Personal Development Environment"
+      
+      - type: command
+        run: |
+          Write-Host "`nRecent Projects:" -ForegroundColor Yellow
+          Get-ChildItem -Directory | Sort-Object LastWriteTime -Descending | Select-Object -First 5 | ForEach-Object {
+            Write-Host "  - $($_.Name)"
+          }
+
+# Tab presets - configurations for opening multiple tabs
+tab_presets:
+  agt_full:
+    name: "AGT Full Development"
+    tabs:
+      - name: "Framework"
+        directory: "C:\\Git\\AGTRobotics\\AGT\\Framework"
+      
+      - name: "Beammaster"
+        directory: "C:\\Git\\AGTRobotics\\AGT\\Beammaster"
+      
+      - name: "PostProcess"
+        directory: "C:\\Git\\AGTRobotics\\AGT\\PostProcess"
+      
+      - name: "Git"
+        directory: "C:\\Git\\AGTRobotics\\AGT"
+        command: "git status"
+
+  media_management:
+    name: "Media Management"
+    tabs:
+      - name: "Movies"
+        directory: "C:\\Users\\steven.aubertin"
+        notes: "For movie/subtitle renaming tasks"
+
+# Environment variables (global)
+environment:
+  # Add global environment variables here
+  WARP_CONFIG_VERSION: "1.0"
+  
+# Aliases (PowerShell functions to add)
+aliases:
+  # Quick navigation
+  agt: cd C:\Git\AGTRobotics\AGT
+  repo: cd C:\Users\steven.aubertin\repo
+  
+  # Git shortcuts
+  gs: git status
+  gd: git diff
+  gl: git log --oneline --graph -10
+  gp: git push
+  gpu: git pull
+  
+  # .NET shortcuts
+  db: dotnet build
+  dt: dotnet test
+  dr: dotnet run
+  dc: dotnet clean

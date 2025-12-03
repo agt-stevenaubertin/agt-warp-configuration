@@ -1,0 +1,59 @@
+# Git Workflows
+# Common git operations and shortcuts
+
+workflows:
+  # Quick status check
+  - name: "Git Status"
+    command: "git status"
+    description: "Show current git status"
+    tags: ["git", "status"]
+
+  # Safe commit workflow
+  - name: "Git Commit Workflow"
+    steps:
+      - git status
+      - git add .
+      - git diff --staged
+      - git commit -m "{{commit_message}}"
+    description: "Review and commit changes"
+    tags: ["git", "commit"]
+
+  # Branch management
+  - name: "Create Feature Branch"
+    command: "git checkout -b feature/{{branch_name}}"
+    description: "Create and switch to a new feature branch"
+    tags: ["git", "branch"]
+
+  - name: "Update from Main"
+    steps:
+      - git fetch origin
+      - git merge origin/main
+    description: "Pull latest changes from main"
+    tags: ["git", "sync"]
+
+  # GitHub CLI workflows (per your preference)
+  - name: "Create Private Repo"
+    command: "gh repo create {{repo_name}} --private --clone"
+    description: "Create a new private GitHub repository"
+    tags: ["github", "repo"]
+
+  - name: "View Pull Requests"
+    command: "gh pr list"
+    description: "List open pull requests"
+    tags: ["github", "pr"]
+
+  - name: "Create Pull Request"
+    command: "gh pr create --fill"
+    description: "Create a pull request from current branch"
+    tags: ["github", "pr"]
+
+  # Common git operations
+  - name: "Undo Last Commit (keep changes)"
+    command: "git reset --soft HEAD~1"
+    description: "Undo the last commit but keep changes staged"
+    tags: ["git", "undo"]
+
+  - name: "View Commit History"
+    command: "git log --oneline --graph --decorate -20"
+    description: "Show last 20 commits in a nice format"
+    tags: ["git", "log"]

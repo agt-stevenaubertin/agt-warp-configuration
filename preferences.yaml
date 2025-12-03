@@ -1,0 +1,51 @@
+# Warp Personal Preferences
+# This file contains your personal preferences for the Warp terminal
+
+# Appearance Settings
+appearance:
+  theme: "dark"  # Options: dark, light, system
+  font_family: "Cascadia Code"  # Common on Windows
+  font_size: 14
+  line_height: 1.5
+  cursor_style: "block"  # Options: block, line, underline
+  show_line_numbers: true
+
+# Editor Settings
+editor:
+  tab_size: 4
+  insert_spaces: true
+  word_wrap: true
+  auto_save: false
+
+# Terminal Behavior
+terminal:
+  shell: "pwsh"  # PowerShell 7
+  close_on_exit: false
+  confirm_before_quit: true
+  scroll_back_lines: 10000
+
+# Prompt Settings
+prompt:
+  show_git_status: true
+  show_command_time: true
+  minimal_mode: false
+
+# AI Agent Settings
+ai:
+  auto_suggest: true
+  context_aware: true
+  verbose_mode: false  # Set to true for more detailed explanations
+
+# Keybindings (customize as needed)
+keybindings:
+  new_tab: "Ctrl+T"
+  close_tab: "Ctrl+W"
+  next_tab: "Ctrl+Tab"
+  previous_tab: "Ctrl+Shift+Tab"
+  clear_screen: "Ctrl+L"
+  search: "Ctrl+F"
+
+# Performance
+performance:
+  hardware_acceleration: true
+  max_fps: 60
