@@ -52,7 +52,7 @@ projects:
   # Personal projects
   personal:
     name: "Personal Projects"
-    working_directory: "C:\\Users\\steven.aubertin\\repo"
+    working_directory: "%USERPROFILE%\\repo"
     on_start:
       - type: message
         text: "💻 Personal Development Environment"
@@ -86,7 +86,7 @@ tab_presets:
     name: "Media Management"
     tabs:
       - name: "Movies"
-        directory: "C:\\Users\\steven.aubertin"
+        directory: "%USERPROFILE%"
         notes: "For movie/subtitle renaming tasks"
 
 # Environment variables (global)
@@ -98,7 +98,7 @@ environment:
 aliases:
   # Quick navigation
   agt: cd C:\Git\AGTRobotics\AGT
-  repo: cd C:\Users\steven.aubertin\repo
+  repo: cd %USERPROFILE%\repo
   
   # Git shortcuts
   gs: git status

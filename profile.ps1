@@ -13,7 +13,7 @@ Import-Module -Name Microsoft.WinGet.CommandNotFound
 
 # Quick navigation functions
 function agt { Set-Location "C:\Git\AGTRobotics\AGT" }
-function repo { Set-Location "C:\Users\steven.aubertin\repo" }
+function repo { Set-Location "$env:USERPROFILE\repo" }
 function framework { Set-Location "C:\Git\AGTRobotics\AGT\Framework" }
 function beammaster { Set-Location "C:\Git\AGTRobotics\AGT\Beammaster" }
 function postprocess { Set-Location "C:\Git\AGTRobotics\AGT\PostProcess" }

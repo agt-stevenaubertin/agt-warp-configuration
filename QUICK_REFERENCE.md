@@ -82,7 +82,7 @@
 # Create project-specific rules
 cd your-project
 mkdir .warp
-cp C:\Users\steven.aubertin\.warp\WARP_template.md .\.warp\WARP.md
+cp $env:USERPROFILE\.warp\WARP_template.md .\.warp\WARP.md
 # Edit WARP.md with project details
 ```
 
@@ -93,4 +93,4 @@ cp C:\Users\steven.aubertin\.warp\WARP_template.md .\.warp\WARP.md
 - Add aliases: Edit `profile.ps1`
 
 ---
-**Quick access:** `C:\Users\steven.aubertin\.warp\`
+**Quick access:** `$env:USERPROFILE\.warp\`

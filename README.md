@@ -40,7 +40,7 @@ cd C:\Git\AGTRobotics\AGT\Framework
 mkdir .warp
 
 # Copy the example configuration
-cp C:\Users\steven.aubertin\.warp\WARP_example_agt_framework.md .\.warp\WARP.md
+cp $env:USERPROFILE\.warp\WARP_example_agt_framework.md .\.warp\WARP.md
 ```
 
 Then customize the WARP.md file for your project's specific needs.
@@ -146,7 +146,7 @@ When working on a new project, create a `.warp/WARP.md` file in the project root
 
 1. **Copy the template:**
    ```powershell
-   cp C:\Users\steven.aubertin\.warp\WARP_template.md .\your-project\.warp\WARP.md
+   cp $env:USERPROFILE\.warp\WARP_template.md .\your-project\.warp\WARP.md
    ```
 
 2. **Fill in the details:**
