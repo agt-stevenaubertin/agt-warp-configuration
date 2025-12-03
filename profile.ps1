@@ -158,15 +158,14 @@ $env:testDatabasesLocation = "C:\Git\AGTRobotics\AGT\WeldingDatabaseInterface\So
 # ============================================================================
 
 Write-Host "✓ Warp profile loaded" -ForegroundColor Green
-
-
+date
 
 # Get the current month
 $currentMonth = (Get-Date).Month
 
 # Check if it's December
 if ($currentMonth -eq 12) {
-if ($PSVersionTable.PSVersion.Major -ge 7)
+    if ($PSVersionTable.PSVersion.Major -ge 7)
 {
 	Write-Host "
      `e[93m_\/_
