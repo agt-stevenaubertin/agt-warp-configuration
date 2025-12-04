@@ -117,7 +117,6 @@ function Open-Database {
 # ============================================================================
 
 $desktop = "$env:USERPROFILE\Desktop"
-$repo = "$env:USERPROFILE\repo"
 
 # ============================================================================
 # Environment Setup
